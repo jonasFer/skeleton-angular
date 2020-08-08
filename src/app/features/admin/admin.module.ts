@@ -5,9 +5,10 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { AdminComponent } from './admin.component';
 import { RouterModule } from '@angular/router';
 import { CoreModule } from '../../core/core.module';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
-  declarations: [HomeComponent, AdminComponent],
+  declarations: [HomeComponent, AdminComponent, PageNotFoundComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
