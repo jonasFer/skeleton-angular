@@ -1,29 +1,27 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FooterComponent } from './components/footer/footer.component';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { AppRoutingModule } from '../app-routing.module';
-
-
-@NgModule({
-  declarations: [
+import { UserService, BaseService } from './services';
+import {
     FooterComponent,
     SidebarComponent,
     NavbarComponent,
-    PageNotFoundComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-  ],
-  providers: [],
-  exports: [
-    NavbarComponent,
-    SidebarComponent,
-    FooterComponent
-  ],
-  bootstrap: []
+    PageNotFoundComponent,
+    UserInfoComponent,
+} from './components';
+import { HttpClient } from '@angular/common/http';
+
+@NgModule({
+    declarations: [
+        FooterComponent,
+        SidebarComponent,
+        NavbarComponent,
+        PageNotFoundComponent,
+        UserInfoComponent,
+    ],
+    imports: [BrowserModule, AppRoutingModule],
+    providers: [BaseService, UserService],
+    exports: [NavbarComponent, SidebarComponent, FooterComponent],
+    bootstrap: [],
 })
-export class CoreModule { }
+export class CoreModule {}
